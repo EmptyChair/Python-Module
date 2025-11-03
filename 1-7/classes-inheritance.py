@@ -1,0 +1,41 @@
+### INHERITANCE
+class Person:
+  def __init__(self, fname, lname):
+    self.firstname = fname
+    self.lastname = lname
+
+  def printname(self):
+    print(self.firstname, self.lastname)
+
+#Use the Person class to create an object, and then execute the printname method:
+
+x = Person("John", "Doe")
+x.printname()
+
+### CHILD CLASS
+class Student(Person):
+  pass
+
+x = Student("Mike", "Olsen")
+x.printname()
+
+
+### CHILD CLASS WITH INIT
+class Student2(Person):
+  def __init__(self, fname, lname):
+      Person.__init__(self, fname, lname)
+
+  def printname(self):
+      print(self.firstname, self.lastname)
+
+### CHILD CLASS WITH SUPER
+class Student3(Person):
+  def __init__(self, fname, lname, year):
+    super().__init__(fname, lname)
+    self.graduationyear = year
+
+  def welcome(self):
+        print("Welcome", self.firstname, self.lastname, "to the class of", self.graduationyear)
+
+x = Student3("Mike", "Olsen", 2019)
+x.welcome()
