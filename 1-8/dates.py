@@ -5,7 +5,7 @@ import datetime
 x = datetime.datetime.now()
 print(x)
 print(x.year)
-print(x.strftime("%A"))
+print(x.strftime("%A")) #weekday
 
 ### Create datetime object - if time not provided, copied from current time
 
